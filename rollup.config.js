@@ -49,6 +49,7 @@ const executeOncePlugins = [
             { src: ['src/*.scss', 'package.json', 'README.md', 'LICENSE', '.npmignore'], dest: 'dist' },
             { src: 'src/test/theming-test.scss', dest: 'dist/test' },
             { src: 'cypress/integration', dest: 'dist/cypress' },
+            { src: 'src/__tests__', dest: 'dist' },
             { src: 'src/test/flagCell/flag-cell-style.scss', dest: 'dist/test/flagCell' },
         ]
     }),
@@ -80,7 +81,7 @@ const rollupConfig = [
         ],
     },
     {
-        input: './dist/types/reactgridProExports.d.ts',
+        input: './dist/types/src/reactgridProExports.d.ts',
         output: [
             { file: './dist/core/reactgrid.d.ts', format: 'es' }
         ],
@@ -89,7 +90,7 @@ const rollupConfig = [
         ],
     },
     {
-        input: './dist/types/lib/index.d.ts',
+        input: './dist/types/src/lib/index.d.ts',
         output: [
             { file: './dist/reactgrid.d.ts', format: 'es' }
         ],
